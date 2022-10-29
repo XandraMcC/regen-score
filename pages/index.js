@@ -12,30 +12,15 @@ export default function Home() {
   const { data: nft, isLoading } = useNFT(contract, 0);
   return (
     <div className={styles.container}>
-      <Header ConnectWallet={ConnectWallet}>
-
-        </Header>
+      <Header ConnectWallet={ConnectWallet} />
       <ThemeProvider
-  breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
-  minBreakpoint="xxs">
-
-      <main className={styles.main}>
-
-        <Hero ConnectWallet={ConnectWallet} address={address}/>
-
-        <Minting />
-
-
-        <Partners/>
-        <div>
-          {/* {!isLoading && nft ? (
-            <ThirdwebNftMedia metadata={nft.metadata} />
-          ) : (
-            <p>Loading...</p>
-          )} */}
-        </div>
-
-      </main>
+        breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+        minBreakpoint="xxs">
+        <main className={styles.main}>
+          <Hero ConnectWallet={ConnectWallet} address={address}/>
+          <Minting />
+          <Partners/>
+        </main>
       </ThemeProvider>
     </div>
   );
