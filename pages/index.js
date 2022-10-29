@@ -42,12 +42,11 @@ export default function Home(props) {
 
   return (
     <div className={styles.container}>
-      <Header ConnectWallet={ConnectWallet}>
-
-        </Header>
+      <Header ConnectWallet={ConnectWallet} />
       <ThemeProvider
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
         minBreakpoint="xxs">
+<<<<<<< HEAD
 
       <main className={styles.main}>
         <Hero 
@@ -59,6 +58,13 @@ export default function Home(props) {
         <Minting />
         <Partners/>
       </main>
+=======
+        <main className={styles.main}>
+          <Hero ConnectWallet={ConnectWallet} address={address}/>
+          <Minting />
+          <Partners/>
+        </main>
+>>>>>>> 821cfb6 (added components)
       </ThemeProvider>
     </div>
   );
