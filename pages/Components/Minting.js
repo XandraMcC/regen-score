@@ -89,7 +89,7 @@ function Minting() {
             {
               isChecked ? (
                 <div>
-                  <MintButton contractAddress={contractAddress} />
+                  <MintButton contractAddress={contractAddress} quantity={quantity} />
                 </div>
               ) : isNotReady ? (
                 <div>
