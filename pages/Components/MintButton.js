@@ -3,7 +3,7 @@ import {
     Web3Button
   } from "@thirdweb-dev/react";
 
-function MintButton({ Component, pageProps, contractAddress }) {
+function MintButton({ Component, pageProps, contractAddress, quantity }) {
     return(
         <div className={styles.mintContainer}>
                     <Web3Button
