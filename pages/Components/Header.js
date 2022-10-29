@@ -1,7 +1,6 @@
 import {Nav, Navbar, Container} from 'react-bootstrap';
-import { ConnectWallet } from "@thirdweb-dev/react";
 
-function Header({ Component, pageProps }) {
+function Header({ Component, pageProps, ConnectWallet }) {
     return(
       <Navbar bg="light" variant="light">
       <Container>

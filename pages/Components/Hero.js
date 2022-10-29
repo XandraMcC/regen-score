@@ -1,6 +1,5 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
 
-function Hero({ Component, pageProps }) {
+function Hero({ Component, pageProps, ConnectWallet, address }) {
     return(
         <div style={{height : "50vh", textAlign: "center", paddingBottom: "50px"}}>
         <h1>Be the change. Get the badge.</h1>
@@ -8,7 +7,7 @@ function Hero({ Component, pageProps }) {
         <p> Connect your wallet to see how you score.</p>
         
         <div style={{width :"200px", margin: "auto"}}>
-        <ConnectWallet />
+       {!address && <ConnectWallet />}
         </div>
         </div>
  )
