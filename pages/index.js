@@ -3,6 +3,8 @@ import { useContract, useNFT, ThirdwebNftMedia } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import {ThemeProvider} from 'react-bootstrap'
 import Header from './Components/Header'
+import Hero from './Components/Hero'
+import Partners from "./Components/Partners"
 
 
 
@@ -20,16 +22,18 @@ export default function Home() {
 
       <main className={styles.main}>
 
-        <div className={styles.connect}>
-          <ConnectWallet />
-        </div>
+        <Hero/>
 
+
+
+
+        <Partners/>
         <div>
-          {!isLoading && nft ? (
+          {/* {!isLoading && nft ? (
             <ThirdwebNftMedia metadata={nft.metadata} />
           ) : (
             <p>Loading...</p>
-          )}
+          )} */}
         </div>
 
       </main>

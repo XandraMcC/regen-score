@@ -2,7 +2,6 @@ import {Nav, Navbar, Container} from 'react-bootstrap';
 import { ConnectWallet } from "@thirdweb-dev/react";
 
 function Header({ Component, pageProps }) {
-  {console.log("this", Component, pageProps)}
     return(
       <Navbar bg="light" variant="light">
       <Container>
