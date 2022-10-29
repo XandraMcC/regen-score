@@ -51,7 +51,7 @@ function Minting({ Component, pageProps, hasImpactMarket }) {
   
     // Loading state while we fetch the metadata
     if (!contract || !contractMetadata) {
-      return <div className={styles.container}>Loading...</div>;
+      return <></>;
     }
 
     return (
