@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 function Partners({ Component, pageProps }) {
     return(
-        <div style={{backgroundColor: "black", width: "100%", textAlign :"center", paddingTop: "20px", color : "white"}}>
+        <div style={{backgroundColor: "#1F9376", width: "100%", textAlign :"center", paddingTop: "20px", color : "white"}}>
         <h2>Partners</h2>
         <Row style={{padding : "50px"}}>
             <Col>
