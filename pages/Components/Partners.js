@@ -20,9 +20,6 @@ function Partners({ Component, pageProps }) {
             <Image src={Gitcoin} height={100} width={100} style={{borderRadius: "50px"}} />
             </Col>
         </Row>
-
-        
-
         </div>
  )
 }
