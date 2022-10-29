@@ -2,13 +2,11 @@
 
 Create a project using this example:
 
-```bash
-npx thirdweb create --template next-javascript-starter
 ```
+yarn install
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-On `pages/_app.js`, you'll find our `ThirdwebProvider` wrapping your app to set up our React SDK.
+yarn dev
+```
 
 ## Learn More
 
