@@ -3,7 +3,6 @@ import {
     useContractMetadata,
     useUnclaimedNFTSupply,
     useActiveClaimCondition,
-    Web3Button,
     useContract,
     useAddress
   } from "@thirdweb-dev/react";
@@ -14,7 +13,7 @@ import {
   
   const contractAddress = "0x7FA0d528CDF36b5cfE753Fae7788d8C2c4EC830a";
   
-function Minting() {
+function Minting({ Component, pageProps, hasImpactMarket }) {
     const address = useAddress();
     const { contract: contract } = useContract(contractAddress);
     
@@ -37,7 +36,7 @@ function Minting() {
       parseInt(activeClaimCondition?.availableSupply) === 0;
   
     // RACHEL ADD STATUS CHECK HERE
-    const isChecked = true;
+    const isChecked = hasImpactMarket;
   
     // Check price
     const price = parseUnits(
@@ -53,43 +52,20 @@ function Minting() {
       return <div className={styles.container}>Loading...</div>;
     }
 
-    
     return (
       <div className={styles.container}>
           <div className={styles.mintInfoContainer}>
-  
           <div className={styles.imageSide}>
-            {/* Image Preview of NFTs */}
-            <img
-              className={styles.image}
-              src={contractMetadata?.image}
-              alt={`${contractMetadata?.name} preview image`}
-            />
-  
-            {/* Amount claimed so far */}
-            <div className={styles.mintCompletionArea}>
-              <div className={styles.mintAreaRight}>
-                {claimedSupply && unclaimedSupply ? (
-                  <p>
-                    <b>{claimedSupply?.toNumber()}</b>
-                    {" / "}
-                    {
-                      // Add unclaimed and claimed supply to get the total supply
-                      claimedSupply?.toNumber() + unclaimedSupply?.toNumber()
-                    }
-                  </p>
-                ) : (
-                  // Show loading state if we're still loading the supply
-                  <p>Loading...</p>
-                )}
-              </div>
-            </div>
-  
             {/* Show claim button or connect wallet button */}
             {
               isChecked ? (
                 <div>
-                  <MintButton contractAddress={contractAddress} quantity={quantity} />
+                    <img
+                    className={styles.image}
+                    src={contractMetadata?.image}
+                    alt={`${contractMetadata?.name} preview image`}
+                    />
+                    <MintButton contractAddress={contractAddress} quantity={quantity} />
                 </div>
               ) : isNotReady ? (
                 <div>

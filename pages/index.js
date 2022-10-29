@@ -5,10 +5,9 @@ import Header from './Components/Header'
 import Hero from './Components/Hero'
 import Partners from "./Components/Partners"
 import React, { useState } from 'react';
-import { request, gql, GraphQLClient } from 'graphql-request'
+import { gql, GraphQLClient } from 'graphql-request'
 import Minting from "./Components/Minting"
 
-const endpoint1 = process.env.PREVIEW_EDGE_CH_ENDPOINT;
 const endpoint = "https://api.thegraph.com/subgraphs/name/impactmarket/subgraph"
 const graphQLClient = new GraphQLClient(endpoint)
 
@@ -38,7 +37,6 @@ export default function Home(props) {
   
   const address = useAddress();
   const { contract } = useContract("0x6C13d42a2AEa14B86F5Ffc15FD398Ddfe362150C");
-  const { data: nft, isLoading } = useNFT(contract, 0);
 
   return (
     <div className={styles.container}>
@@ -54,7 +52,7 @@ export default function Home(props) {
           getImpactMarketStatus={getImpactMarketStatus} 
           hasImpactMarket={hasImpactMarket}
           hasChecked={hasChecked} />
-        <Minting />
+        <Minting hasImpactMarket={hasImpactMarket}/>
         <Partners/>
       </main>
       </ThemeProvider>
