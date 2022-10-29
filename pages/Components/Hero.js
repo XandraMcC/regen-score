@@ -1,5 +1,16 @@
 
-function Hero({ Component, pageProps, ConnectWallet, address }) {
+import {Button} from 'react-bootstrap'
+
+import {React, useState} from 'react';
+
+function Hero({ Component, pageProps, ConnectWallet, address, getImpactMarketStatus, 
+    hasImpactMarket,
+    hasChecked,
+     }) {
+
+    var [startChecking, setStartChecking ] = useState(false)
+
+    const responseText = hasImpactMarket ? "yay you have impact market": "no you dont"
     return(
         <div style={{height : "50vh", textAlign: "center", paddingBottom: "50px"}}>
         <h1>Be the change. Get the badge.</h1>
@@ -7,7 +18,7 @@ function Hero({ Component, pageProps, ConnectWallet, address }) {
         <p> Connect your wallet to see how you score.</p>
         
         <div style={{width :"200px", margin: "auto"}}>
-       {!address && <ConnectWallet />}
+       {hasChecked ? responseText :(!address ? <ConnectWallet />: (!startChecking ? (<Button onClick={()=>{  setStartChecking(true); return getImpactMarketStatus(address.toLowerCase())}} variant="primary">Check Status</Button>): "checking"))}
         </div>
         </div>
  )
