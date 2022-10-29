@@ -4,8 +4,7 @@ import {ThemeProvider} from 'react-bootstrap'
 import Header from './Components/Header'
 import Hero from './Components/Hero'
 import Partners from "./Components/Partners"
-
-
+import Minting from "./Components/Minting"
 
 export default function Home() {
   const address = useAddress();
@@ -24,7 +23,7 @@ export default function Home() {
 
         <Hero ConnectWallet={ConnectWallet} address={address}/>
 
-
+        <Minting />
 
 
         <Partners/>
