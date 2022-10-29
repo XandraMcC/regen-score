@@ -1,4 +1,5 @@
 import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
+import Head from "next/head";
 import "../styles/globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
