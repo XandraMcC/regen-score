@@ -10,6 +10,8 @@ import {
   import { useState } from "react";
   import styles from "../../styles/Home.module.css";
   import MintButton from "./MintButton";
+  import Image from 'next/image'
+  import nft from '../../public/regenNFT.png';
   
   const contractAddress = "0x7FA0d528CDF36b5cfE753Fae7788d8C2c4EC830a";
   
@@ -46,25 +48,17 @@ function Minting({ Component, pageProps, hasImpactMarket }) {
   
     // Multiply depending on quantity
     const priceToMint = price.mul(quantity);
-  
-    // Loading state while we fetch the metadata
-    if (!contract || !contractMetadata) {
-      return <div className={styles.container}>Loading...</div>;
-    }
 
     return (
       <div className={styles.container}>
           <div className={styles.mintInfoContainer}>
           <div className={styles.imageSide}>
             {/* Show claim button or connect wallet button */}
+            
             {
               isChecked ? (
                 <div>
-                    <img
-                    className={styles.image}
-                    src={contractMetadata?.image}
-                    alt={`${contractMetadata?.name} preview image`}
-                    />
+                    <Image src={nft} height={200} width={200} style={{borderRadius: "50px"}} />
                     <MintButton contractAddress={contractAddress} quantity={quantity} />
                 </div>
               ) : isNotReady ? (
