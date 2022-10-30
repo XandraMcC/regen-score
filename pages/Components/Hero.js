@@ -5,6 +5,7 @@ import {React, useState} from 'react';
 import Image from 'next/image'
 import Loading from "./../../public/loading.gif"
 import Celobrate from "./../../public/celebrate.gif"
+import SadFace from "./../../public/sadface.gif"
 
 function Hero({ Component, pageProps, ConnectWallet, address, getImpactMarketStatus, 
     hasImpactMarket,
@@ -14,7 +15,8 @@ function Hero({ Component, pageProps, ConnectWallet, address, getImpactMarketSta
     var [startChecking, setStartChecking ] = useState(false)
 
     const responseText = hasImpactMarket ? (<> <p>Congrats, you have donated to Impact Market - mint your NFT</p>
-    <Image src={Celobrate}/></>): "no you dont"
+    <Image src={Celobrate}/></>): (<> <p>Please donate to Impact Market to be eligible for a REGEN HOUSE membership</p>
+    <Image src={SadFace}/></>)
 
     // const  loading = <Image src={Loading}/>
     return(
